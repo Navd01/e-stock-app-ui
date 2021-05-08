@@ -6,6 +6,7 @@ import Header from "./components/Layout/Header";
 import AddCompany from "./components/Company/AddCompany";
 import { Provider } from "react-redux";
 import store from "./store";
+import ProjectDetails from "./components/Company/ProjectDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Header />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/addCompany" component={AddCompany} />
+          <Route exact path="/projectDetails" component={ProjectDetails} />
         </div>
       </Router>
     </Provider>

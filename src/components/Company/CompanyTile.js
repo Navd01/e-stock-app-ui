@@ -37,6 +37,7 @@ class CompanyTile extends Component {
                 </a>
               </ul>
             </div>
+
             <div className="col-2">
               <span className="mx-auto">
                 <b>Latest Stock Price</b> - {company.latestStockPrice}

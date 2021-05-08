@@ -1,4 +1,4 @@
-import { GET_COMPANIES } from "../actions/types";
+import { GET_COMPANIES, GET_COMPANY } from "../actions/types";
 
 const initialState = {
   companies: [],
@@ -11,6 +11,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         companies: action.payload,
+      };
+    case GET_COMPANY:
+      return {
+        ...state,
+        company: action.payload,
       };
 
     default:
