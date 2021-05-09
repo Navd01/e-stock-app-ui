@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import CompanyTile from "./CompanyTile";
+import { Link } from "react-router-dom";
 
-class ProjectDetails extends Component {
+class CompanyDetails extends Component {
   render() {
     const { company } = this.props.company;
 
@@ -16,6 +17,11 @@ class ProjectDetails extends Component {
                 <h1 className="display-4 text-center">Company Details</h1>
                 <br />
               </div>
+              <div>
+                <Link to="/Dashboard" className="btn btn-info">
+                  Back
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -26,7 +32,7 @@ class ProjectDetails extends Component {
   }
 }
 
-ProjectDetails.propTypes = {
+CompanyDetails.propTypes = {
   company: PropTypes.object.isRequired,
 };
 
@@ -34,4 +40,4 @@ const mapStateToProps = (state) => ({
   company: state.company,
 });
 
-export default connect(mapStateToProps, null)(ProjectDetails);
+export default connect(mapStateToProps, null)(CompanyDetails);

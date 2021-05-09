@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import AddStockModal from "../Layout/AddStockModal";
+import DeleteCompanyModal from "../Layout/DeleteCompanyModal";
+import { Link } from "react-router-dom";
 
 class CompanyTile extends Component {
   render() {
@@ -20,21 +23,19 @@ class CompanyTile extends Component {
             </div>
             <div className="col-md-4 d-none d-lg-block">
               <ul className="list-group">
-                <a href="#">
-                  <li className="list-group-item board">
-                    <i className="fa fa-flag-checkered pr-1">Add a Stock </i>
-                  </li>
-                </a>
-                <a href="#">
+                <AddStockModal
+                  key={company.id}
+                  companyCode={company.companyCode}
+                />
+                <Link to="/stockDetails">
                   <li className="list-group-item update">
                     <i className="fa fa-edit pr-1">Veiw Stocks In Range</i>
                   </li>
-                </a>
-                <a href="">
-                  <li className="list-group-item delete">
-                    <i className="fa fa-minus-circle pr-1">Delete Company</i>
-                  </li>
-                </a>
+                </Link>
+                <DeleteCompanyModal
+                  key={company.id}
+                  companyCode={company.companyCode}
+                />
               </ul>
             </div>
 

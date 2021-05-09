@@ -6,7 +6,8 @@ import Header from "./components/Layout/Header";
 import AddCompany from "./components/Company/AddCompany";
 import { Provider } from "react-redux";
 import store from "./store";
-import ProjectDetails from "./components/Company/ProjectDetails";
+import CompanyDetails from "./components/Company/CompanyDetails";
+import StockDetails from "./components/Company/StockDetails";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Header />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/addCompany" component={AddCompany} />
-          <Route exact path="/projectDetails" component={ProjectDetails} />
+          <Route exact path="/companyDetails" component={CompanyDetails} />
+          <Route exact path="/stockDetails" component={StockDetails} />
         </div>
       </Router>
     </Provider>

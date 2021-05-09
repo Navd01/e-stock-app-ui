@@ -1,5 +1,10 @@
 import axios from "axios";
-import { GET_COMPANIES, GET_ERRORS, GET_COMPANY } from "./types";
+import {
+  GET_COMPANIES,
+  GET_ERRORS,
+  GET_COMPANY,
+  DELETE_COMPANY,
+} from "./types";
 
 export const addCompany = (company, history) => async (dispatch) => {
   try {
@@ -39,7 +44,7 @@ export const getCompanyDetails = (companyCode, history) => async (dispatch) => {
     const res = await axios.get(
       `http://localhost:8100/api/v1.0/market/company/info/${companyCode}`
     );
-    history.push("/projectDetails");
+    history.push("/companyDetails");
     dispatch({
       type: GET_COMPANY,
       payload: res.data,
@@ -54,4 +59,14 @@ export const getCompanyDetails = (companyCode, history) => async (dispatch) => {
       payload: err.response.data,
     });
   }
+};
+
+export const deleteCompany = (companyCode) => async (dispatch) => {
+  const res = await axios.delete(
+    `http://localhost:8100/api/v1.0/market/company/delete/${companyCode}`
+  );
+  dispatch({
+    type: DELETE_COMPANY,
+    payload: companyCode,
+  });
 };
