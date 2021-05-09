@@ -18,7 +18,11 @@ function App() {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/addCompany" component={AddCompany} />
           <Route exact path="/companyDetails" component={CompanyDetails} />
-          <Route exact path="/stockDetails" component={StockDetails} />
+          <Route
+            exact
+            path="/stockDetails/:companyCode"
+            component={StockDetails}
+          />
         </div>
       </Router>
     </Provider>

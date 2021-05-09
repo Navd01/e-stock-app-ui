@@ -27,7 +27,7 @@ class CompanyTile extends Component {
                   key={company.id}
                   companyCode={company.companyCode}
                 />
-                <Link to="/stockDetails">
+                <Link to={`/stockDetails/${company.companyCode}`}>
                   <li className="list-group-item update">
                     <i className="fa fa-edit pr-1">Veiw Stocks In Range</i>
                   </li>
