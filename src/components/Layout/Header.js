@@ -12,9 +12,9 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/dashboard">
+                <a className="nav-link" href="/dashboard">
                   Dashboard
-                </Link>
+                </a>
               </li>
             </ul>
 

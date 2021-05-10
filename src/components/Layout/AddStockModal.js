@@ -32,6 +32,9 @@ class AddStockModal extends Component {
       stockPrice: this.state.stock,
     };
     this.props.addStock(newStock, companyCode);
+    this.setState({
+      stock: "",
+    });
   };
 
   render() {

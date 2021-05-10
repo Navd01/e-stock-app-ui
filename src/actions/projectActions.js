@@ -4,6 +4,7 @@ import {
   GET_ERRORS,
   GET_COMPANY,
   DELETE_COMPANY,
+  GET_STOCK_DETAILS,
 } from "./types";
 
 export const addCompany = (company, history) => async (dispatch) => {
@@ -15,6 +16,10 @@ export const addCompany = (company, history) => async (dispatch) => {
     history.push("/dashboard");
     dispatch({
       type: GET_ERRORS,
+      payload: {},
+    });
+    dispatch({
+      type: GET_STOCK_DETAILS,
       payload: {},
     });
   } catch (err) {
