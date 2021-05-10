@@ -31,7 +31,20 @@ class StockDetails extends Component {
   };
   render() {
     const { companyCode } = this.props.match.params;
-    const { stocks } = this.props.data;
+    const {
+      stocks,
+      minStockPrice,
+      maxStockPrice,
+      avgStockPrice,
+    } = this.props.data;
+
+    let props = {
+      propStocks: stocks,
+      propMin: minStockPrice,
+      propMax: maxStockPrice,
+      propAvg: avgStockPrice,
+    };
+    console.log("This is min", minStockPrice);
     console.log("These are Stocks", stocks);
     return (
       <div>
@@ -89,7 +102,7 @@ class StockDetails extends Component {
         </div>
         <hr />
 
-        <StockTable key={companyCode} stocks={stocks} />
+        <StockTable key={companyCode} props={props} />
       </div>
     );
   }

@@ -2,8 +2,11 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "./StockTable.css";
 
-export default function StockTable({ stocks }) {
-  if (!stocks) return null;
+export default function StockTable({ props }) {
+  console.log("tjisis props", props);
+  const { propStocks, propMin, propMax, propAvg } = props;
+  console.log("thisisis prpstocs", propStocks);
+  if (!propStocks) return null;
 
   const renderStock = (stock, index) => {
     return (
@@ -15,15 +18,34 @@ export default function StockTable({ stocks }) {
     );
   };
   return (
-    <Table className="table" striped bordered hover>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>STOCK PRICE</th>
-          <th>CREATED AT</th>
-        </tr>
-      </thead>
-      <tbody>{stocks.map(renderStock)}</tbody>
-    </Table>
+    <div>
+      <Table className="table" striped bordered hover>
+        <thead>
+          <tr>
+            <th>Minimum Stock Price</th>
+            <th>Maximum Stock Price</th>
+            <th>Average Stock Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{propMin}</td>
+            <td>{propMax}</td>
+            <td>{propAvg}</td>
+          </tr>
+        </tbody>
+      </Table>
+      <hr />
+      <Table className="table" striped bordered hover>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>STOCK PRICE</th>
+            <th>CREATED AT</th>
+          </tr>
+        </thead>
+        <tbody>{propStocks.map(renderStock)}</tbody>
+      </Table>
+    </div>
   );
 }
