@@ -25,7 +25,6 @@ class AddStockModal extends Component {
 
   onSubmit = (e) => {
     const { companyCode } = this.props;
-    console.log("This is compabyCode", companyCode);
     this.setState({ isOpen: false });
     e.preventDefault();
     const newStock = {

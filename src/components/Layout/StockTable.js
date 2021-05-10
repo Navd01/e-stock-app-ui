@@ -3,9 +3,7 @@ import Table from "react-bootstrap/Table";
 import "./StockTable.css";
 
 export default function StockTable({ props }) {
-  console.log("tjisis props", props);
   const { propStocks, propMin, propMax, propAvg } = props;
-  console.log("thisisis prpstocs", propStocks);
   if (!propStocks) return null;
 
   const renderStock = (stock, index) => {

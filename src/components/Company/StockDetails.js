@@ -44,8 +44,6 @@ class StockDetails extends Component {
       propMax: maxStockPrice,
       propAvg: avgStockPrice,
     };
-    console.log("This is min", minStockPrice);
-    console.log("These are Stocks", stocks);
     return (
       <div>
         <div className="projects">
