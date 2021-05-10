@@ -39,6 +39,15 @@ class StockDetails extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
+                <div>
+                  <a
+                    className="nav-link"
+                    href="/dashboard"
+                    style={{ fontSize: "20px" }}
+                  >
+                    Back
+                  </a>
+                </div>
                 <h1 className="display-4 text-center">Stock Details</h1>
                 <br />
               </div>
