@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -37,7 +36,6 @@ class StockDetails extends Component {
   };
   render() {
     const { errors } = this.state;
-    const { companyCode } = this.props.match.params;
     const { stocks, minStockPrice, maxStockPrice, avgStockPrice } =
       this.props.data;
 
@@ -104,7 +102,7 @@ class StockDetails extends Component {
         </div>
         <hr />
 
-        <StockTable key={companyCode} props={props} />
+        <StockTable props={props} />
       </div>
     );
   }

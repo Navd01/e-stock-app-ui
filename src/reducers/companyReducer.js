@@ -5,7 +5,7 @@ const initialState = {
   company: {},
 };
 
-export default function (state = initialState, action) {
+export default function company(state = initialState, action) {
   switch (action.type) {
     case GET_COMPANIES:
       return {

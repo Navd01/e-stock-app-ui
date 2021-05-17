@@ -4,7 +4,7 @@ const initialState = {
   stock: {},
 };
 
-export default function (state = initialState, action) {
+export default function stock(state = initialState, action) {
   switch (action.type) {
     case ADD_STOCK:
       return {

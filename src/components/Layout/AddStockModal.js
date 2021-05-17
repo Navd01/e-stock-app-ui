@@ -40,7 +40,7 @@ class AddStockModal extends Component {
     const { companyCode } = this.props;
     return (
       <div>
-        <a onClick={this.openModal}>
+        <a href="# " onClick={this.openModal}>
           <li className="list-group-item board">
             <i className="fa fa-flag-checkered pr-1" style={{ color: "green" }}>
               Add a Stock{" "}

@@ -26,7 +26,7 @@ class CompanyDetails extends Component {
           </div>
         </div>
         <hr />
-        <CompanyTile key={company.companyCode} company={company} />
+        <CompanyTile company={company} />
       </div>
     );
   }

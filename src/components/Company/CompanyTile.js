@@ -23,19 +23,13 @@ class CompanyTile extends Component {
             </div>
             <div className="col-md-4 d-none d-lg-block">
               <ul className="list-group">
-                <AddStockModal
-                  key={company.companyCode}
-                  companyCode={company.companyCode}
-                />
+                <AddStockModal companyCode={company.companyCode} />
                 <Link to={`/stockDetails/${company.companyCode}`}>
                   <li className="list-group-item update">
                     <i className="fa fa-edit pr-1">Veiw Stocks In Range</i>
                   </li>
                 </Link>
-                <DeleteCompanyModal
-                  key={company.companyCode}
-                  companyCode={company.companyCode}
-                />
+                <DeleteCompanyModal companyCode={company.companyCode} />
               </ul>
             </div>
           </div>

@@ -9,7 +9,7 @@ import {
 
 export const addCompany = (company, history) => async (dispatch) => {
   try {
-    const res = await axios.post(
+    await axios.post(
       "http://localhost:8100/api/v1.0/market/company/register",
       company
     );
@@ -67,7 +67,7 @@ export const getCompanyDetails = (companyCode, history) => async (dispatch) => {
 };
 
 export const deleteCompany = (companyCode) => async (dispatch) => {
-  const res = await axios.delete(
+  await axios.delete(
     `http://localhost:8100/api/v1.0/market/company/delete/${companyCode}`
   );
   dispatch({
