@@ -20,22 +20,25 @@ export const addStock = (stock, companyCode) => async (dispatch) => {
   }
 };
 
-export const getStockDetails = (companyCode, fromDate, toDate) => async (
-  dispatch
-) => {
-  try {
-    const res = await axios.get(
-      `http://localhost:8100/api/v1.0/market/stock/get/${companyCode}/${fromDate}/${toDate}`
-    );
+export const getStockDetails =
+  (companyCode, fromDate, toDate) => async (dispatch) => {
+    try {
+      const res = await axios.get(
+        `http://localhost:8100/api/v1.0/market/stock/get/${companyCode}/${fromDate}/${toDate}`
+      );
 
-    dispatch({
-      type: GET_STOCK_DETAILS,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: GET_ERRORS,
-      payload: err.response.data,
-    });
-  }
-};
+      dispatch({
+        type: GET_STOCK_DETAILS,
+        payload: res.data,
+      });
+      dispatch({
+        type: GET_ERRORS,
+        payload: {},
+      });
+    } catch (err) {
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data,
+      });
+    }
+  };

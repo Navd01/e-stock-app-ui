@@ -4,3 +4,4 @@ export const GET_COMPANY = "GET_COMPANY";
 export const ADD_STOCK = "ADD_STOCK";
 export const DELETE_COMPANY = "DELETE_COMPANY";
 export const GET_STOCK_DETAILS = "GET_STOCK_DETAILS";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";

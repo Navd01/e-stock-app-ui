@@ -75,6 +75,7 @@ class Dashboard extends Component {
                         <button
                           className="btn btn-outline-success"
                           type="submit"
+                          disabled={!this.state.searchCompany}
                         >
                           Search
                         </button>
@@ -86,7 +87,7 @@ class Dashboard extends Component {
               </div>
               <hr />
               {companies.map((company) => (
-                <CompanyTile key={company.id} company={company} />
+                <CompanyTile key={company.companyCode} company={company} />
               ))}
             </div>
           </div>

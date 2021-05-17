@@ -24,7 +24,7 @@ class CompanyTile extends Component {
             <div className="col-md-4 d-none d-lg-block">
               <ul className="list-group">
                 <AddStockModal
-                  key={company.id}
+                  key={company.companyCode}
                   companyCode={company.companyCode}
                 />
                 <Link to={`/stockDetails/${company.companyCode}`}>
@@ -33,16 +33,10 @@ class CompanyTile extends Component {
                   </li>
                 </Link>
                 <DeleteCompanyModal
-                  key={company.id}
+                  key={company.companyCode}
                   companyCode={company.companyCode}
                 />
               </ul>
-            </div>
-
-            <div className="col-2">
-              <span className="mx-auto">
-                <b>Latest Stock Price</b> - {company.latestStockPrice}
-              </span>
             </div>
           </div>
         </div>
@@ -50,4 +44,5 @@ class CompanyTile extends Component {
     );
   }
 }
+
 export default CompanyTile;

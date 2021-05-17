@@ -13,9 +13,15 @@ class StockDetails extends Component {
     this.state = {
       fromDate: "",
       toDate: "",
+      errors: {},
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -30,13 +36,10 @@ class StockDetails extends Component {
     );
   };
   render() {
+    const { errors } = this.state;
     const { companyCode } = this.props.match.params;
-    const {
-      stocks,
-      minStockPrice,
-      maxStockPrice,
-      avgStockPrice,
-    } = this.props.data;
+    const { stocks, minStockPrice, maxStockPrice, avgStockPrice } =
+      this.props.data;
 
     let props = {
       propStocks: stocks,
@@ -88,6 +91,7 @@ class StockDetails extends Component {
                       onChange={this.onChange}
                     />
                   </div>
+                  <p style={{ color: "red" }}>{errors.stockCode}</p>
                   <div className="col-md-offset-6 ">
                     <Button variant="primary" type="submit" size="lg">
                       Submit
@@ -109,10 +113,12 @@ class StockDetails extends Component {
 StockDetails.propTypes = {
   data: PropTypes.object.isRequired,
   getStockDetails: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
 };
 
 const mapStoreToProps = (state) => ({
   data: state.stock.stock,
+  errors: state.errors,
 });
 
 export default connect(mapStoreToProps, { getStockDetails })(StockDetails);
